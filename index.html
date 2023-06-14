@@ -4,16 +4,26 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 	<title>BSI Twibbon</title>
 	<meta name="description" content="Bina Sarana Indormatika twibbon Maker">
 	<meta name="keyword" content="BSI, BSI Twibbon Maker, twibbon Maker">
+
+	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+	<!-- Google reCAPTCHA -->
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+  	<!-- Bootstrap JS -->
   	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 	<style>
 		body, head {
 			background-image: url('https://gcdnb.pbrd.co/images/qMyTjzHQiQmB.jpg');
@@ -40,6 +50,7 @@
 						<p class="text-start">Aplikasi web yang memungkinkan mahasiswa untuk membuat twibbon khusus dengan mudah. Dengan menggunakan aplikasi ini, mahasiswa dapat mengunggah foto mereka sendiri dan memilih desain twibbon yang telah disediakan. Aplikasi ini menawarkan beberapa desain yang dapat dipilih oleh mahasiswa.</p>
 					</div>
 					<form method="post" enctype="multipart/form-data" action="twibbon.php">
+						<!-- Upload foto -->
 						<label class="font-weight-light"><b>Upload foto</b></label>
 						<input type="file" name="file" id="image" accept="image/*" class="p-1 img-thumbnail btn-block">
 						<div class="mb-2 font-italic">
@@ -51,7 +62,6 @@
 						</button>
 						<a title="Cara penggunaan" class="btn btn-info btn-sm mt-3" data-toggle="modal" data-target="#modal">
 							Cara penggunaan
-							
 						</a>
 					</form>
 				</div>
@@ -61,6 +71,7 @@
 						<p>Klik <a href="#" data-toggle="modal" data-target="#teamModal">Disini</a> untuk melihat tim pengembang.</p>
 					</div>
 
+					<!-- Modal untuk tim pengembang -->
 					<div class="modal fade" id="teamModal" tabindex="-1" role="dialog" aria-labelledby="teamModalLabel" aria-hidden="true">
 						<div class="modal-dialog modal-dialog-centered" role="document">
 							<div class="modal-content">
@@ -72,6 +83,7 @@
 								</div>
 								<div class="modal-body">
 									<div class="row">
+										<!-- Anggota tim pengembang -->
 										<div class="col-md-4 mt-2">
 											<div class="card">
 												<img src="./assets/azfa.jpg" alt="Azfa" class="card-img-top">
@@ -125,7 +137,7 @@
 						</div>
 					</div>
 
-
+					<!-- Modal untuk cara penggunaan -->
 					<div class="modal modal-fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modallabel" aria-hidden="true">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
@@ -138,7 +150,7 @@
 								<div class="modal-body">
 									1. Pilih gambar yang akan digunakan untuk Twibbon Anda dengan mengklik tombol "Upload foto".
 									<br>
-									2. Verifikasi captcha, untuk memastikan bahwa anda bukan robot.
+									2. Verifikasi captcha, untuk memastikan bahwa Anda bukan robot.
 									<br>
 									3. Klik tombol "Buat Twibbon!" untuk menghasilkan Twibbon Anda.
 									<br>
@@ -150,6 +162,7 @@
 							</div>
 						</div>
 					</div>
+				</div>
 	<script>
 		$(document).on('click', '#submit', function() {
 			var response = grecaptcha.getResponse();
@@ -157,7 +170,7 @@
 				alert("Silahkan verifikasi bahwa kamu bukanlah ROBOT:)")
 				return false;
 			} else {
-				console.log("Capcha Berhasil");
+				console.log("Captcha Berhasil");
 			}
 		});
 	</script>

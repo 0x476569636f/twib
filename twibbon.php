@@ -14,7 +14,7 @@
 	<meta name="keyword" content="BSI, BSI Twibbon Maker, twibbon Maker">
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 	<!-- Google reCAPTCHA -->
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<!-- jQuery -->
@@ -23,7 +23,7 @@
 		body, head {
 			background-image: url('https://gcdnb.pbrd.co/images/qMyTjzHQiQmB.jpg');
 			background-size: cover;
-			font-family: 'Playfair Display';
+			font-family: 'Open Sans';
 		}
 	</style>
 </head>

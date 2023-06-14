@@ -135,12 +135,13 @@ $(document).ready(function() {
     });
 
     // Gambar awal
+	img1.src = img1.getAttribute('src');
     img1.onload = function() {
         selectedTwibbonImg = img1;
         drawImages();
     };
 
-    img1.src = img1.getAttribute('src');
+    
 
     function drawImages() {
         context.clearRect(0, 0, canvas.width, canvas.height);

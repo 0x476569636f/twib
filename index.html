@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<title>BSI Twibbon</title>
+	<meta name="description" content="Bina Sarana Indormatika twibbon Maker">
+	<meta name="keyword" content="BSI, BSI Twibbon Maker, twibbon Maker">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<style>
+		body, head {
+			background-image: url('https://gcdnb.pbrd.co/images/qMyTjzHQiQmB.jpg');
+			background-size: cover;
+			font-family: 'Playfair Display';
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-light bg-white shadow-sm">
+		<div class="container">
+			<a class="navbar-brand" href="./assets/nav.png">
+				<img src="./assets/nav.png" width="35" height="35">
+				<span class="navbar-brand mb-0 h1">BSI Twibbon Maker</span>
+			</a>
+		</div>
+	</nav>
+	<div class="container my-5">
+		<div class="row">
+			<div class="col-lg-6 offset-lg-3 col-md-12 mb-4">
+				<div class="card card-body shadow-sm mb-4">
+					<div class="mb-4 font-weight-light">
+						<h4 class="font-weight-light">BSI Twibbon Maker</h4>
+						<p class="text-start">Aplikasi web yang memungkinkan mahasiswa untuk membuat twibbon khusus dengan mudah. Dengan menggunakan aplikasi ini, mahasiswa dapat mengunggah foto mereka sendiri dan memilih desain twibbon yang telah disediakan. Aplikasi ini menawarkan beberapa desain yang dapat dipilih oleh mahasiswa.</p>
+					</div>
+					<form method="post" enctype="multipart/form-data" action="twibbon.php">
+						<label class="font-weight-light"><b>Upload foto</b></label>
+						<input type="file" name="file" id="image" accept="image/*" class="p-1 img-thumbnail btn-block">
+						<div class="mb-2 font-italic">
+							<small>Harap gunakan ukuran foto 1:1 untuk hasil terbaik</small>
+						</div>
+						<div class="g-recaptcha mt-3" data-sitekey="6Lcd3XwmAAAAANtJKuKoNbniPt-GC8wKKn7cWIV6"></div>
+						<button type="submit" id="submit" name="submit" class="btn btn-primary btn-sm mt-3">
+							Buat Twibbon!
+						</button>
+						<a title="Cara penggunaan" class="btn btn-info btn-sm mt-3" data-toggle="modal" data-target="#modal">
+							Cara penggunaan
+							
+						</a>
+					</form>
+				</div>
+				<div class="card card-body shadow-sm">
+					<div class="font-weight-light">
+						Made with <span style="color: #e25555;">&#9829;</span> By kelompok 5 RPL
+						<p>Klik <a href="#" data-toggle="modal" data-target="#teamModal">Disini</a> untuk melihat tim pengembang.</p>
+					</div>
+
+					<div class="modal fade" id="teamModal" tabindex="-1" role="dialog" aria-labelledby="teamModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h6 class="modal-title" id="teamModalLabel">Developers BSI Twibbon Maker</h6>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<div class="row">
+										<div class="col-md-4 mt-2">
+											<div class="card">
+												<img src="./assets/azfa.jpg" alt="Azfa" class="card-img-top">
+												<div class="card-body">
+													<h4 class="card-title">Azfa Haqqani</h4>
+													<p class="card-text">Jungler</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-4 mt-2">
+											<div class="card">
+												<img src="./assets/irvan.jpg" alt="Irvan" class="card-img-top">
+												<div class="card-body">
+													<h4 class="card-title">Irvan Pram</h4>
+													<p class="card-text">Mid laner</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-4 mt-2">
+											<div class="card">
+												<img src="./assets/iki.jpg" alt="Iki" class="card-img-top">
+												<div class="card-body">
+													<h4 class="card-title">Rizky Fernand</h4>
+													<p class="card-text">Exp laner</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4 mt-2">
+											<div class="card">
+												<img src="./assets/haikal.jpg" alt="Haikal" class="card-img-top">
+												<div class="card-body">
+													<h4 class="card-title">Haikal Putra</h4>
+													<p class="card-text">Gold laner</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-4 mt-2">
+											<div class="card">
+												<img src="./assets/tirtha.jpg" alt="Tirtha" class="card-img-top">
+												<div class="card-body">
+													<h4 class="card-title">Tirtha Raga</h4>
+													<p class="card-text">Roamer</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="modal modal-fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modallabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<b>Cara penggunaan</b>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									1. Pilih gambar yang akan digunakan untuk Twibbon Anda dengan mengklik tombol "Upload foto".
+									<br>
+									2. Verifikasi captcha, untuk memastikan bahwa anda bukan robot.
+									<br>
+									3. Klik tombol "Buat Twibbon!" untuk menghasilkan Twibbon Anda.
+									<br>
+									4. Pilih salah satu desain Twibbon yang tersedia pada dropdown menu "Harap Pilih Template Twibbon".
+									<br>
+									5. Setelah berhasil, Anda dapat mengunduh Twibbon tersebut dengan mengklik tombol "Download gambar".
+									<p> </p>
+								</div>
+							</div>
+						</div>
+					</div>
+	<script>
+		$(document).on('click', '#submit', function() {
+			var response = grecaptcha.getResponse();
+			if (response.length == 0) {
+				alert("Silahkan verifikasi bahwa kamu bukanlah ROBOT:)")
+				return false;
+			} else {
+				console.log("Capcha Berhasil");
+			}
+		});
+	</script>
+</body>
+</html>

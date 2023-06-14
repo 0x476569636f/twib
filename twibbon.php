@@ -4,15 +4,20 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- SweetAlert JS -->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 	<title>BSI Twibbon</title>
 	<meta name="description" content="Bina Sarana Indormatika twibbon Maker">
 	<meta name="keyword" content="BSI, BSI Twibbon Maker, twibbon Maker">
+	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+	<!-- Google reCAPTCHA -->
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 	<style>
 		body, head {
@@ -23,8 +28,10 @@
 	</style>
 </head>
 <body>
+	<!-- Hidden images untuk template twibbon -->
 	<img src="twibbon1.png" id="twibbon1" width="1000px" height="1000px" hidden="true" class="img-fluid">
 	<img src="twibbon2.png" id="twibbon2" width="1000px" height="1000px" hidden="true" class="img-fluid">
+	<!-- Navbar -->
 	<nav class="navbar navbar-light bg-white shadow-sm">
 		<div class="container">
 			<a class="navbar-brand" href="./assets/nav.png">
@@ -35,9 +42,11 @@
 	</nav>
 	<div class="container my-5">
 		<div class="row">
+			<!-- Card untuk form -->
 			<div class="col-lg-6 offset-lg-3 col-md-12 mb-4">
 				<div class="card card-body shadow-sm mb-4">
 					<?php
+						// Form submission handling
 						if (isset($_POST['submit']))
 						{
 							$namafile       = $_FILES["file"]["name"];
@@ -67,6 +76,7 @@
 										move_uploaded_file($_FILES["file"]["tmp_name"], "images/" . $namabaru);
 										$gambar = "images/" . $namabaru;
 
+										// Menampilkan image dan canvas
 										echo '<img src="'.$gambar.'" id="img1" width="1000px" height="1000px" hidden="true" class="img-fluid">';
 										echo '<img src="" id="img2" width="1000px" height="1000px" hidden="true" class="img-fluid">';
 										echo '<h2><canvas id="canvas" class="img-fluid"></canvas></h2>';
@@ -102,8 +112,9 @@
 				exit;
 			}
 		}
-
 	?>
+
+	<!-- Konten html -->
 	<h6 class="font-weight-normal mt-1">Harap Pilih Template Twibbon</h6>
 	<select class="form-control" id="twibbonSelect">
 		<option selected>--- Pilih Twibbon ---</option>
@@ -116,55 +127,57 @@
 </div>
 
 <script> 
-$(document).ready(function() {
-    var img1 = $('#img1')[0];
-    var img2 = $('#img2')[0];
-    var canvas = $('#canvas')[0];
-    var context = canvas.getContext("2d");
-    var width = img2.width;
-    var height = img2.height;
-    canvas.width = width;
-    canvas.height = height;
-    var twibbonSelect = $('#twibbonSelect');
-    var selectedTwibbonImg;
+	$(document).ready(function() {
+		var img1 = $('#img1')[0];
+		var img2 = $('#img2')[0];
+		var canvas = $('#canvas')[0];
+		var context = canvas.getContext("2d");
+		var width = img2.width;
+		var height = img2.height;
+		canvas.width = width;
+		canvas.height = height;
+		var twibbonSelect = $('#twibbonSelect');
+		var selectedTwibbonImg;
 
-    twibbonSelect.on('change', function() {
-        var selectedTwibbon = twibbonSelect.val();
-        selectedTwibbonImg = $('#' + selectedTwibbon)[0];
-        drawImages();
-    });
+				// Event saat dropdown template twibbon berubah
+		twibbonSelect.on('change', function() {
+			var selectedTwibbon = twibbonSelect.val();
+			selectedTwibbonImg = $('#' + selectedTwibbon)[0];
+			drawImages();
+		});
 
-    // Gambar awal
-	img1.src = img1.getAttribute('src');
-    img1.onload = function() {
-        selectedTwibbonImg = img1;
-        drawImages();
-    };
+				// gambar awal tanpa twibbon
+		img1.src = img1.getAttribute('src');
+		img1.onload = function() {
+			selectedTwibbonImg = img1;
+			drawImages();
+		};
 
-    
+				// Function draw images ke canvas
+		function drawImages() {
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			context.drawImage(img1, 0, 0, width, height);
+			if (selectedTwibbonImg) {
+				context.drawImage(selectedTwibbonImg, 0, 0, width, height);
+			}
+		}
+	});
 
-    function drawImages() {
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        context.drawImage(img1, 0, 0, width, height);
-        if (selectedTwibbonImg) {
-            context.drawImage(selectedTwibbonImg, 0, 0, width, height);
-        }
-    }
-});
+			// Function download hasil canvas
+	function downloadCanvas(link, canvasId, filename) {
+		link.href = document.getElementById(canvasId).toDataURL();
+		link.download = filename;
+	}
 
-function downloadCanvas(link, canvasId, filename) {
-    link.href = document.getElementById(canvasId).toDataURL();
-    link.download = filename;
-}
-
-$('#download').click(function() {
-    downloadCanvas(this, 'canvas', 'bsitwibbon.png');
-});
-
+			// Event saat "Download gambar" button di klik
+	$('#download').click(function() {
+		downloadCanvas(this, 'canvas', 'bsitwibbon.png');
+	});
 
 </script>	
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
-</html>	
+</html>

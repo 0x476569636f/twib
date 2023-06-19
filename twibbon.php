@@ -33,7 +33,6 @@
 	<img src="twibbon2.png" id="twibbon2" width="1000px" height="1000px" hidden="true" class="img-fluid">
 	<img src="twibbon3.png" id="twibbon3" width="1000px" height="1000px" hidden="true" class="img-fluid">
 	<img src="twibbon4.png" id="twibbon4" width="1000px" height="1000px" hidden="true" class="img-fluid">
-	<img src="twibbon5.png" id="twibbon5" width="1000px" height="1000px" hidden="true" class="img-fluid">
 	<!-- Navbar -->
 	<nav class="navbar navbar-light bg-white shadow-sm">
 		<div class="container">
@@ -117,15 +116,14 @@
 		}
 	?>
 
-	<!-- Konten html -->
+	<!-- pilih twibbon html -->
 	<h6 class="font-weight-normal mt-1">Harap Pilih Template Twibbon</h6>
 	<select class="form-control" id="twibbonSelect">
 		<option selected>--- Pilih Twibbon ---</option>
 		<option value="twibbon1">Rekayasa Perangkat Lunak</option>
-		<option value="twibbon2">Sastra Inggris</option>
-		<option value="twibbon3">Akuntansi</option>
-		<option value="twibbon4">Teknik Industri</option>
-		<option value="twibbon5">Manajemen</option>
+		<option value="twibbon2">Akuntansi</option>
+		<option value="twibbon3">Teknik Industri</option>
+		<option value="twibbon4">Manajemen</option>
 	</select>
 	<a id="download" class="btn btn-outline-primary btn-sm mt-3">Download gambar</a>
 	<a href="index.html" id="reset" class="btn btn-outline-danger btn-sm mt-3">Reset Gambar</a>

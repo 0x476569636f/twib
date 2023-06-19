@@ -9,9 +9,9 @@
 	<!-- SweetAlert JS -->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-	<title>BSI Twibbon</title>
-	<meta name="description" content="Bina Sarana Indormatika twibbon Maker">
-	<meta name="keyword" content="BSI, BSI Twibbon Maker, twibbon Maker">
+	<title>UNK Twibbon</title>
+	<meta name="description" content="Universitas Negeri Konoha twibbon Maker">
+	<meta name="keyword" content="UNK, UNK Twibbon Maker, twibbon Maker">
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
 		<div class="container">
 			<a class="navbar-brand" href="./assets/nav.png">
 				<img src="./assets/nav.png" width="35" height="35">
-				<span class="navbar-brand mb-0 h1">BSI Twibbon Maker</span>
+				<span class="navbar-brand mb-0 h1">UNK Twibbon Maker</span>
 			</a>
 		</div>
 	</nav>
@@ -116,7 +116,7 @@
 		}
 	?>
 
-	<!-- pilih twibbon html -->
+	<!-- Konten html -->
 	<h6 class="font-weight-normal mt-1">Harap Pilih Template Twibbon</h6>
 	<select class="form-control" id="twibbonSelect">
 		<option selected>--- Pilih Twibbon ---</option>

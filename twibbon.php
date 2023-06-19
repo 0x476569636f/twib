@@ -36,8 +36,7 @@
 	<!-- Navbar -->
 	<nav class="navbar navbar-light bg-white shadow-sm">
 		<div class="container">
-			<a class="navbar-brand" href="./assets/nav.png">
-				<img src="./assets/nav.png" width="35" height="35">
+			<a class="navbar-brand">
 				<span class="navbar-brand mb-0 h1">UNK Twibbon Maker</span>
 			</a>
 		</div>

@@ -7,6 +7,8 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- SweetAlert JS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.3/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.3/dist/sweetalert2.min.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 	<title>UNK Twibbon</title>
@@ -47,7 +49,7 @@
 			<div class="col-lg-6 offset-lg-3 col-md-12 mb-4">
 				<div class="card card-body shadow-sm mb-4">
 					<?php
-						// Form submission handling
+						// Validasi file yang di upload
 						if (isset($_POST['submit']))
 						{
 							$namafile       = $_FILES["file"]["name"];
@@ -125,11 +127,11 @@
 		<option value="twibbon4">Manajemen</option>
 	</select>
 	<a id="download" class="btn btn-outline-primary btn-sm mt-3">Download gambar</a>
-	<a href="index.html" id="reset" class="btn btn-outline-danger btn-sm mt-3">Reset Gambar</a>
+	<button class="btn btn-outline-danger btn-sm mt-3" id="reset">Reset Gambar</button>
 </form>
 </div>
 
-<script> 
+<script>
 	$(document).ready(function() {
 		var img1 = $('#img1')[0];
 		var img2 = $('#img2')[0];
@@ -176,6 +178,22 @@
 	$('#download').click(function() {
 		downloadCanvas(this, 'canvas', 'bsitwibbon.png');
 	});
+
+	document.getElementById('reset').addEventListener('click', function() {
+  		Swal.fire({
+   			title: 'Apakah Anda yakin?',
+    		text: 'Pilihan yang Anda buat tidak dapat dibatalkan.',
+   			icon: 'warning',
+    		showCancelButton: true,
+    		confirmButtonText: 'Ya',
+    		cancelButtonText: 'Tidak'
+  		}).then((result) => {
+    		if (result.isConfirmed) {
+				window.location.href = "index.html"
+    	} 
+  });
+});
+
 
 </script>	
 </body>
